@@ -1,0 +1,11 @@
+5. Employees, osa 1
+
+a. SELECT * FROM `departments` WHERE 1;
+b. SELECT DISTINCT title FROM titles WHERE 1;
+c. SELECT MIN(salary) AS Pienin_palkka, MAX(salary) AS Suurin_palkka FROM salaries WHERE 1;
+d. SELECT AVG(salary) FROM salaries WHERE 1;
+e. SELECT first_name, last_name FROM `employees` WHERE last_name = 'Facello';
+f. SELECT COUNT(*) AS Employees FROM `employees` WHERE YEAR(birth_date) BETWEEN '1950' AND '1959';
+g. SELECT gender, COUNT(*) FROM `employees` GROUP BY gender;
+
+

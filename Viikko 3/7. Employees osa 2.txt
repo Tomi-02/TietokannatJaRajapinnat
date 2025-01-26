@@ -1,0 +1,25 @@
+a. SELECT * FROM employees ORDER BY employees.last_name ASC LIMIT 10;
+
+b. SELECT * FROM employees ORDER BY employees.last_name, first_name ASC LIMIT 10;
+
+c. SELECT * FROM employees ORDER BY hire_date DESC LIMIT 5;
+
+d. SELECT employees.first_name,employees.last_name,salaries.salary FROM employees JOIN salaries ON employees.emp_no=salaries.emp_no ORDER BY salaries.salary DESC LIMIT 1;
+
+e. SELECT employees.first_name,employees.last_name,salaries.salary FROM employees JOIN salaries ON employees.emp_no=salaries.emp_no ORDER BY salaries.salary ASC LIMIT 1;
+
+f. SELECT employees.first_name, employees.last_name, salaries.salary FROM employees JOIN salaries ON employees.emp_no = salaries.emp_no WHERE salaries.salary > 150000;
+
+g. SELECT COUNT(dept_emp.dept_no) AS SALES_COUNT FROM dept_emp JOIN departments ON dept_emp.dept_no = departments.dept_no WHERE departments.dept_name IN ("Sales", "Marketing") GROUP BY departments.dept_name; 
+
+h. SELECT employees.first_name, employees.last_name, departments.dept_name FROM dept_manager JOIN departments ON dept_manager.dept_no = departments.dept_no JOIN employees ON dept_manager.emp_no = employees.emp_no;
+
+i. SELECT AVG(salaries.salary) AS AVERAGE_SALARY FROM dept_emp
+JOIN departments ON dept_emp.dept_no = departments.dept_no
+JOIN salaries ON dept_emp.emp_no = salaries.emp_no
+WHERE departments.dept_name IN ("Sales", "Marketing") GROUP BY departments.dept_name;
+SELECT departments.dept_name AS department_name, 
+AVG(salaries.salary) AS average_salary FROM dept_emp
+JOIN departments ON dept_emp.dept_no = departments.dept_no
+JOIN salaries ON dept_emp.emp_no = salaries.emp_no
+WHERE departments.dept_name IN ("Sales", "Marketing") GROUP BY departments.dept_name;

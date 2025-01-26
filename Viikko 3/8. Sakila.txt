@@ -1,0 +1,9 @@
+a. SELECT * FROM language WHERE 1 ORDER BY name ASC;
+
+b. SELECT DISTINCT film.title AS ELOKUVAT FROM film_actor JOIN actor ON film_actor.actor_id = actor.actor_id JOIN film ON film_actor.film_id = film.film_id WHERE actor.last_name='Temple';
+
+c. SELECT DISTINCT actor.* FROM film_actor JOIN actor ON film_actor.actor_id = actor.actor_id JOIN film ON film_actor.film_id = film.film_id WHERE film.title = 'Ghost Groundhog';
+
+d. SELECT COUNT(film.title) FROM film_category JOIN category ON film_category.category_id = category.category_id JOIN film on film_category.film_id = film.film_id WHERE category.name='Horror';
+
+e. SELECT * FROM film_category JOIN category ON film_category.category_id=category.category_id JOIN film ON film_category.film_id = film.film_id WHERE category.name='Horror';
